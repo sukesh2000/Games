@@ -106,17 +106,20 @@ def replay():
 
 
 def next_turn(pla, board):
+    position = 0
     if pla == p1:
-        position = 0
         while position not in list(range(1,10)) or not space_check(board, position):
-            position = int(input('Choose your next position: (1-9)'))
-        return position
+            try:
+                position = int(input('Choose your next position: (1-9)'))
+            except:
+                print("Looks like you did not enter an integer!")
     elif pla == p2:
-        position = 0
         while position not in list(range(1,10)) or not space_check(board, position):
-            position = random.randint(1, 9)
-        return position
-
+            try:
+                position = int(input('Choose your next position: (1-9)'))
+            except:
+                print("Looks like you did not enter an integer!")
+    return position
 
 # In[24]:
 
