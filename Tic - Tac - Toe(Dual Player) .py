@@ -184,4 +184,5 @@ while True:
 
     if not replay():
         break
+    tl = list(range(9))
 
