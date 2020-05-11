@@ -118,33 +118,33 @@ def replay():
 
 
 #Next player's turn
-def turn_play(pla):
+def turn_play(t):
     global tl
-    if p == p1:
+    if t == 1:
         if tl[0]%2 == 0:
-            pla = p2
+            p = p2
             tl.remove(tl[0])
-            return pla
+            return p
         else:
-            pla = p1
+            p = p1
             tl.remove(tl[0])
-            return pla
-    elif p == p2:
+            return p
+    elif t == 2:
         if tl[0]%2 == 0:
-            pla = p1
+            p = p1
             tl.remove(tl[0])
-            return pla
-        else:
-            pla = p2
+            return p
+        else:            
+            p = p2
             tl.remove(tl[0])
-            return pla
+            return p
 
 
 # In[12]:
 
 
 #Main
-tl = list(range(18))
+tl = list(range(9))
 while True:
     print('Welcome to Tic Tac Toe!')
     test_board = [' ']*10
@@ -180,8 +180,7 @@ while True:
             display_board(test_board, ava)
             print('The game is tied.')
             g = False
-        p = turn_play(p)
-        p = turn_play(p)
+        p = turn_play(turn)
 
     if not replay():
         break
