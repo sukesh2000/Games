@@ -98,9 +98,12 @@ def full_board_check(board):
 def your_choice(board):
     position = 0
     while position not in list(range(1,10)) or not space_check(board, position):
-        position = int(input('Choose your next position: (1-9)'))
+        try:
+            position = int(input('Choose your next position: (1-9)'))
+        except:
+            print("Looks like you did not enter an integer!")
+    
     return position
-
 
 # In[9]:
 
